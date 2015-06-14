@@ -9,22 +9,33 @@ import java.util.List;
 public class CardGame {
 
 
-    List<Deck> decks = new ArrayList<>();
+    public Deck deck = new Deck(0);
+    public Deck hand = new Deck(0);
 
     public CardGame(int nrOfDecks) {
-        for (int i = 0; i < nrOfDecks; i++) {
-            decks.add(new Deck());
-        }
+        for (int i = 0; i < nrOfDecks; i++)
+            deck.addDeck();
     }
 
     public CardGame() {
         this(1);
     }
-//
-//    public int size() {
-//        int size=0;
-//        for(Deck d : decks){
-//
-//        }
-//    }
+
+    public CardGame(String cards) {
+        deck.addCards(cards);
+    }
+
+    public Card[] draw(int count) {
+        Card[] cards =  deck.draw(count);
+        hand.addCards(cards);
+        return cards;
+    }
+
+    public void shuffleDeck() {
+        deck.shuffle();
+    }
+
+    public void sortDeck() {
+        deck.sort();
+    }
 }
