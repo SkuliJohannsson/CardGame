@@ -27,6 +27,8 @@ public class Main {
             else if (cmd.startsWith("shuffle")) shuffle();
             else if (cmd.startsWith("sort")) sort();
             else if (cmd.startsWith("restart") || cmd.startsWith("start")) start(Util.getArgs(cmd));
+            else if (cmd.equals("sf")) process("status hand deck");
+            else if (cmd.equals("ss")) process("start simple");
             else unknownCmd();
         } catch (Exception ex) {
             failedCmd();

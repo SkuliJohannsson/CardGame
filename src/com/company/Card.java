@@ -1,6 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -8,16 +10,12 @@ import java.util.List;
  */
 public class Card implements Comparable<Card> {
 
-    List<String> suits = Arrays.asList(new String[]{"C", "T", "H", "S"});
-    List<String> ranks = Arrays.asList(new String[]{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"});
+    static List<String> suits = Collections.unmodifiableList(Arrays.asList(new String[]{"C", "T", "H", "S"}));
+    static List<String> ranks = Collections.unmodifiableList(
+            Arrays.asList(new String[]{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"}));
 
-    Suit suit;
-    Rank rank;
-
-    public Card(Rank rank, Suit suit) {
-        this.suit = suit;
-        this.rank = rank;
-    }
+    String suit;
+    String rank;
 
     //The input sting must be exactly like what a toString method would return.
     //Using the string representation of the card to create it. It is in a way the inverse operation
@@ -27,16 +25,22 @@ public class Card implements Comparable<Card> {
 
         //the index of 'the textual represetnation of rank/suit' in ranks/suits equals the ordinal in the Enum.
         //It is so because of how the toString operation is made.
-        String rank = card.substring(0, lastIndex);
-        this.rank = Rank.values()[ranks.indexOf(rank)];
+        rank = card.substring(0, lastIndex);
 
-        String suit = card.substring(lastIndex);
-        this.suit = Suit.values()[suits.indexOf(suit)];
+        suit = card.substring(lastIndex);
+    }
+
+    public static List<Card> getAllCombinations() {
+        List<Card> cards = new ArrayList<>();
+        for (String r : ranks)
+            for (String s : suits)
+                cards.add(new Card(r + s));
+        return cards;
     }
 
     @Override
     public String toString() {
-        return ranks.get(rank.ordinal()) + suits.get(suit.ordinal());
+        return rank + suit;
     }
 
     @Override
@@ -45,16 +49,13 @@ public class Card implements Comparable<Card> {
             return false;
         }
 
-        Card that = (Card) other;
-
-        return this.suit == that.suit
-                && this.rank == that.rank;
+        return this.toString().equals(other.toString());
     }
 
     @Override
     public int compareTo(Card other) {
-        int difference = this.suit.compareTo(other.suit);
+        int difference = suits.indexOf(suit) - suits.indexOf(other.suit);
         if (difference != 0) return difference;
-        return this.rank.compareTo(other.rank);
+        return ranks.indexOf(rank) - ranks.indexOf(other.rank);
     }
 }

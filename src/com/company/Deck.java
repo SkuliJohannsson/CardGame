@@ -2,13 +2,14 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by skuli on 11.06.15.
  */
 public class Deck {
 
-    ArrayList<Card> cards = new ArrayList<>();
+    List<Card> cards = new ArrayList<>();
 
     public Deck() {
         this(1);
@@ -40,9 +41,7 @@ public class Deck {
     }
 
     public void addDeck() {
-        for (Rank r : Rank.values())
-            for (Suit s : Suit.values())
-                cards.add(new Card(r, s));
+        cards.addAll(Card.getAllCombinations());
     }
 
     public Card draw() {
