@@ -32,7 +32,7 @@ public class Util {
         return sbStr.toString();
     }
 
-    public static boolean IsPositiveNumber(String str){
+    public static boolean IsPositiveNumber(String str) {
         return str.matches("^\\d+$");
     }
 }

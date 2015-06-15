@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -16,7 +15,7 @@ public class Deck {
     }
 
     public Deck(int decks) {
-        while(decks-->0) addDeck();
+        while (decks-- > 0) addDeck();
     }
 
     public Deck(String cards) {
@@ -28,18 +27,19 @@ public class Deck {
         return this;
     }
 
-    public Deck addCards(String cards){
-        for ( String c : cards.split(" "))
+    public Deck addCards(String cards) {
+        for (String c : cards.split(" "))
             addCard(new Card(c));
         return this;
     }
+
     public Deck addCards(Card[] cards) {
-        for (Card c:cards)
+        for (Card c : cards)
             addCard(c);
         return this;
     }
 
-    public void addDeck(){
+    public void addDeck() {
         for (Rank r : Rank.values())
             for (Suit s : Suit.values())
                 cards.add(new Card(r, s));
@@ -47,12 +47,12 @@ public class Deck {
 
     public Card draw() {
 
-        if(cards.size()==0) return null;
+        if (cards.size() == 0) return null;
         return cards.remove(cards.size() - 1);
     }
 
     public Card[] draw(int count) {
-        count=Math.min(count, cards.size());
+        count = Math.min(count, cards.size());
 
         Card[] cards = new Card[count];
         for (int i = 0; i < count; i++) {
@@ -72,12 +72,12 @@ public class Deck {
         return this;
     }
 
-    public Deck shuffle(){
+    public Deck shuffle() {
         Collections.shuffle(cards);
         return this;
     }
 
-    public int size(){
+    public int size() {
         return cards.size();
     }
 

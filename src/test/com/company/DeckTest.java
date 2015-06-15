@@ -14,21 +14,21 @@ import java.util.List;
 public class DeckTest {
 
     @Test
-    public void testCreation(){
+    public void testCreation() {
         Assert.assertEquals("2T", new Deck("2T").toString());
         Assert.assertEquals("AS AS", new Deck("AS AS").toString());
         Assert.assertEquals("AS 5C", new Deck("AS 5C").toString());
     }
 
     @Test
-    public void testHasCards(){
+    public void testHasCards() {
         Assert.assertFalse(new Deck(0).hasCards());
         Assert.assertTrue(new Deck().hasCards());
         Assert.assertTrue(new Deck("9T").hasCards());
     }
 
     @Test
-    public void testAddition(){
+    public void testAddition() {
         Assert.assertEquals("AS", new Deck(0).addCards("AS").toString());
         Assert.assertEquals("2T 3C 7S", new Deck("2T").addCards("3C 7S").toString());
         Assert.assertEquals("4H 9T 3C 7S 9H KC 10S", new Deck("4H 9T").addCards("3C 7S").addCards("9H").addCards("KC 10S").toString());
@@ -38,8 +38,8 @@ public class DeckTest {
     public void testSize() {
         Assert.assertEquals(0, new Deck(0).size());
         Assert.assertEquals(52, new Deck(1).size());
-        Assert.assertEquals(52*2, new Deck(2).size());
-        Assert.assertEquals(52*4, new Deck(4).size());
+        Assert.assertEquals(52 * 2, new Deck(2).size());
+        Assert.assertEquals(52 * 4, new Deck(4).size());
         Assert.assertEquals(52 * 8, new Deck(8).size());
     }
 

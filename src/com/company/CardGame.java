@@ -1,8 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by skuli on 11.06.15.
  */
@@ -26,7 +23,7 @@ public class CardGame {
     }
 
     public Card[] draw(int count) {
-        Card[] cards =  deck.draw(count);
+        Card[] cards = deck.draw(count);
         hand.addCards(cards);
         return cards;
     }

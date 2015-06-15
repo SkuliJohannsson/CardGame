@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by skuli on 11.06.15.
  */
-public class Card  implements Comparable<Card>{
+public class Card implements Comparable<Card> {
 
     List<String> suits = Arrays.asList(new String[]{"C", "T", "H", "S"});
     List<String> ranks = Arrays.asList(new String[]{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"});
@@ -23,7 +23,7 @@ public class Card  implements Comparable<Card>{
     //Using the string representation of the card to create it. It is in a way the inverse operation
     //to the method toString.
     public Card(String card) {
-        int lastIndex = card.length()-1;
+        int lastIndex = card.length() - 1;
 
         //the index of 'the textual represetnation of rank/suit' in ranks/suits equals the ordinal in the Enum.
         //It is so because of how the toString operation is made.
@@ -54,7 +54,7 @@ public class Card  implements Comparable<Card>{
     @Override
     public int compareTo(Card other) {
         int difference = this.suit.compareTo(other.suit);
-        if(difference!=0) return difference;
+        if (difference != 0) return difference;
         return this.rank.compareTo(other.rank);
     }
 }
