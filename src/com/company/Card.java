@@ -17,16 +17,19 @@ public class Card implements Comparable<Card> {
     String suit;
     String rank;
 
-    //The input sting must be exactly like what a toString method would return.
-    //Using the string representation of the card to create it. It is in a way the inverse operation
-    //to the method toString.
+    /**
+     * We use the string representation of a card to create it. It is in a way the inverse operation
+     * to the method toString().
+     *
+     * @param card The input string must be exactly like what the toString() method returns.
+     */
     public Card(String card) {
         int lastIndex = card.length() - 1;
 
-        //the index of 'the textual represetnation of rank/suit' in ranks/suits equals the ordinal in the Enum.
-        //It is so because of how the toString operation is made.
+        //The first one or two characters..
         rank = card.substring(0, lastIndex);
 
+        //The last character.
         suit = card.substring(lastIndex);
     }
 
