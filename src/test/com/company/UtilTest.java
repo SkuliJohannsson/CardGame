@@ -25,7 +25,7 @@ public class UtilTest {
     }
 
     @Test
-    public void testIsPositive() {
+    public void testIsPositiveNumber() {
         Assert.assertFalse(Util.IsPositiveNumber(""));
         Assert.assertFalse(Util.IsPositiveNumber("a"));
         Assert.assertFalse(Util.IsPositiveNumber("-1"));

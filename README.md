@@ -4,7 +4,15 @@
 
 ```console
 Game of Cards
-start simple
+status
+ Nr. of cards in deck: '52'
+ Hand: ''
+restart 2
+ Game restarted
+status
+ Nr. of cards in deck: '104'
+ Hand: ''
+restart simple
  Game restarted
 status
  Nr. of cards in deck: '9'
@@ -29,4 +37,16 @@ shuffle
  Shuffled deck
 status deck
  Deck: 'AS AC AH AT KT AS KH'
+restart
+ Nr. of cards in deck: '52'
+ Hand: ''
+draw s
+ Failed to process command
+draw 5
+ Drew 'KS KH KT KC QS'
+staus
+ Unknown command
+status
+ Nr. of cards in deck: '47'
+ Hand: 'KS KH KT KC QS'
 ```

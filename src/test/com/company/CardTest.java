@@ -38,10 +38,10 @@ public class CardTest {
     }
 
     private void assertSortedCardsEqual(String expected, String cards) {
-        String [] sCards = cards.split(" ");
+        String[] sCards = cards.split(" ");
         Card[] cs = new Card[sCards.length];
-        for ( int i=0;i<sCards.length;i++) {
-            cs[i]=new Card(sCards[i]);
+        for (int i = 0; i < sCards.length; i++) {
+            cs[i] = new Card(sCards[i]);
         }
         Arrays.sort(cs);
         Assert.assertEquals(expected, Util.toSimplerString(cs));

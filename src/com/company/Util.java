@@ -8,7 +8,11 @@ import java.util.List;
  */
 public class Util {
 
-    //getArgs("a b c") == "b c" for example
+    /**
+     * An example usage: getArgs("a b c") == "b c"
+     *
+     * @param cmd A command with arguments. For example "a b c"
+     */
     public static String[] getArgs(String cmd) {
         String[] arr = cmd.split(" ");
         return Arrays.copyOfRange(arr, 1, arr.length);
