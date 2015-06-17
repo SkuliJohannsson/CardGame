@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Card implements Comparable<Card> {
 
-    static List<String> suits = Collections.unmodifiableList(Arrays.asList(new String[]{"C", "T", "H", "S"}));
+    static List<String> suits = Collections.unmodifiableList(Arrays.asList(new String[]{"C", "D", "H", "S"}));
     static List<String> ranks = Collections.unmodifiableList(
             Arrays.asList(new String[]{"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"}));
 

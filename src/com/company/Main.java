@@ -47,7 +47,7 @@ public class Main {
     private static void start(String[] args) {
         if (args.length == 0) game = new CardGame();
         else if (Util.IsPositiveNumber(args[0])) game = new CardGame(Integer.parseInt(args[0]));
-        else if (args[0].equals("simple")) game = new CardGame("AS AS AH AC AT KH KT KH KS");
+        else if (args[0].equals("simple")) game = new CardGame("AS AS AH AC AD KH KD KH KS");
 
         System.out.format("Game restarted%n", game.deck.size());
     }

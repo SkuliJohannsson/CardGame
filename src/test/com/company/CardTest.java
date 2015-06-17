@@ -26,13 +26,13 @@ public class CardTest {
         Assert.assertEquals("AS", new Card("AS").toString());
         Assert.assertEquals("KH", new Card("KH").toString());
         Assert.assertEquals("4C", new Card("4C").toString());
-        Assert.assertEquals("10T", new Card("10T").toString());
+        Assert.assertEquals("10D", new Card("10D").toString());
     }
 
     @Test
     public void testSortCards() throws Exception {
         assertSortedCardsEqual("AS 10S JS QS KS", "AS KS QS JS 10S");
-        assertSortedCardsEqual("AC 5T 3H 2S", "2S 3H 5T AC");
+        assertSortedCardsEqual("AC 5D 3H 2S", "2S 3H 5D AC");
         assertSortedCardsEqual("AH 2H 3H 4H", "4H 3H 2H AH");
         assertSortedCardsEqual("AH AH 2H 2H", "2H AH 2H AH");
     }
